@@ -21,7 +21,7 @@ type AddItemEntityPacket struct {
 }
 
 func NewAddItemEntityPacket() *AddItemEntityPacket {
-	return &AddItemEntityPacket{NewPacket(info.AddItemEntityPacket), 0, 0, nil, vectors.TripleVector{}, vectors.TripleVector{}, math.Rotation{}, entities.NewAttributeMap(), nil}
+	return &AddItemEntityPacket{NewPacket(info.AddItemEntityPacket), 0, 0, nil, vectors.TripleVector{}, vectors.TripleVector{}, math.Rotation{}, nil}
 }
 
 func (pk *AddItemEntityPacket) Encode() {
