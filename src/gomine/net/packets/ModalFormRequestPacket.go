@@ -11,7 +11,7 @@ type ModalFormRequestPacket struct {
 }
 
 func NewModalFormRequestPacket() * ModalFormRequestPacket{
-	return &ModalFormRequestPacket{NewPacket(info.ModalFormRequestPacket), -012453, ""}
+	return &ModalFormRequestPacket{NewPacket(info.ModalFormRequestPacket), nil, ""}
 }
 
 func (pk *ModalFormRequestPacket) Encode() {
