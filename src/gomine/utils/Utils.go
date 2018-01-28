@@ -73,3 +73,17 @@ func ConstructEncryptionJwt(key *ecdsa.PrivateKey, token []byte) string {
 
 	return headerStr + "." + payloadStr + "." + signature
 }
+
+//Concatenate strings
+func Con(str ...string) string{
+	lastStr := ""
+	var l int
+	for _, v := range str {
+		l = len(lastStr)		
+		bs := make([]byte, l+len(v))
+		copy(bs[:l], lastStr)
+    		copy(bs[l:], v)
+		lastStr = string(bs)
+	}
+    	return lastStr
+}
