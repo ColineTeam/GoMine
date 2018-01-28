@@ -22,7 +22,7 @@ If you want to use an official release:
 
 If you want to use a development version:
 1. Install Go 1.9.2 from the official release page.
-2. To clone the repository, use either: `go get github.com/Irmine/GoMine`, or, if you have Git installed: `git clone --recursive https://github.com/Irmine/GoMine`
+2. To clone the repository, use either: `go get github.com/ColineTeam/GoMine`, or, if you have Git installed: `git clone --recursive https://github.com/ColineTeam/GoMine`
 3. Navigate into the GoMine/src folder and execute: `go build`. It will now start compiling GoMine.
 4. An executable should have appeared. Execute it to run the server.
 

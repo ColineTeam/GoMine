@@ -53,6 +53,8 @@ type Server struct {
 
 	pluginManager *plugins.PluginManager
 
+	itemFactory *items.ItemFactory
+
 	queryManager query.QueryManager
 }
 
@@ -77,6 +79,8 @@ func NewServer(serverPath string) *Server {
 	server.permissionManager = permissions.NewPermissionManager(server)
 
 	server.pluginManager = plugins.NewPluginManager(server)
+
+	server.itemFactory = items.NewItemFactory(server)
 
 	server.queryManager = query.NewQueryManager(server)
 
