@@ -306,13 +306,35 @@ const (
 )
 
 type Item struct {
-	itemId *int
-	itemDamage *int
-	itemCount *int
-	namedTag *gonbt.NamedTag
+	itemId int32
+	itemDamage int32
+	itemCount int32
+	namedTag gonbt.NamedTag
+	compoundTag gonbt.Compound
 }
 
-func NewItem(id *int, damage *int, count *int) *Item{
-	compound := gonbt.NewNamedTag("Unknown", gonbt.TAG_Compound, nil)
-	return &Item{id,damage, count, compound}
+func NewItem(id int32, damage int32, count int32) *Item{
+	named := gonbt.NewNamedTag("Unknown", gonbt.TAG_Compound, nil)
+	compound := gonbt.NewCompound("", nil)
+	return &Item{id,damage, count, *named, *compound}
+}
+
+func (item *Item) GetItemId() int32{
+	return item.itemId
+}
+
+func (item *Item) GetItemDmg() int32{
+	return item.itemDamage
+}
+
+func (item *Item) GetItemCount() int32{
+	return item.itemCount
+}
+
+func (item *Item) GetItemCompound() gonbt.Compound{
+	return item.compoundTag
+}
+
+func (item *Item) GetItemNamedTag() gonbt.NamedTag{
+	return item.namedTag
 }

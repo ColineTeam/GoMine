@@ -6,6 +6,7 @@ import (
 	"gomine/entities"
 	"gomine/interfaces"
 	"gomine/entities/math"
+	"gomine/items"
 )
 
 type Packet struct {
@@ -141,6 +142,13 @@ func (pk *Packet) GetEntityAttributeMap() *entities.AttributeMap {
 	}
 
 	return attributes
+}
+
+func (pk *Packet) PutSlot(item items.Item) {
+	pk.PutVarInt(item.GetItemId())
+	pk.PutVarInt(item.GetItemCount())
+	pk.PutVarInt(0)
+	pk.PutVarInt(0)
 }
 
 func (pk *Packet) PutEntityData(dat map[uint32][]interface{}) {
